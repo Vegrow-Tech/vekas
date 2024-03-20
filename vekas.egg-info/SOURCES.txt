@@ -1,0 +1,16 @@
+setup.py
+vekas/__init__.py
+vekas/asgi.py
+vekas/urls.py
+vekas/wsgi.py
+vekas.egg-info/PKG-INFO
+vekas.egg-info/SOURCES.txt
+vekas.egg-info/dependency_links.txt
+vekas.egg-info/top_level.txt
+vekas/settings/__init__.py
+vekas/settings/base.py
+vekas/settings/local.py
+vekas/walletservice/__init__.py
+vekas/walletservice/models.py
+vekas/walletservice/migrations/0001_initial.py
+vekas/walletservice/migrations/__init__.py
