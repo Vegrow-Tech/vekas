@@ -7,6 +7,9 @@ vekas.egg-info/PKG-INFO
 vekas.egg-info/SOURCES.txt
 vekas.egg-info/dependency_links.txt
 vekas.egg-info/top_level.txt
+vekas/customerservice/__init__.py
+vekas/customerservice/models.py
+vekas/customerservice/migrations/__init__.py
 vekas/settings/__init__.py
 vekas/settings/base.py
 vekas/settings/local.py
