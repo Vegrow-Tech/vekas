@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class AppCustomer(models.Model):
     first_name = models.CharField(db_index=True, max_length=256, null=True, blank=True)
     last_name = models.CharField(db_index=True, max_length=256, null=True, blank=True)

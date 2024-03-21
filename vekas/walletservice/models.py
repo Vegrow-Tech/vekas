@@ -5,33 +5,32 @@ from django.contrib.auth.models import User
 
 
 # Create your models here.
-class Wallet(models.Model):
-    user_id = models.BigIntegerField()
-    created_on = models.BigIntegerField()
+# class Wallet(models.Model):
+#     user_id = models.BigIntegerField()
+#     created_on = models.BigIntegerField()
 
 from django.db import models
 from django.contrib.auth.models import User
 
 # Create your models here.
-from userservice.utils.utility_functions import current_time, get_utc_ms_time
+
+#
+# class Customer(User):
+#     user_id = models.CharField(max_length=50, null=False, blank=False, unique=True,db_index=True)
+#     created_on = models.BigIntegerField()
+#     is_archived = models.BooleanField(default=False)
+#     validated = models.BooleanField(default=False)
+#
+#
+# class Authentication(models.Model):
+#     token = models.CharField(max_length=50)
+#     expiry_date = models.BigIntegerField()
+#     user = models.ForeignKey(Customer, on_delete=models.CASCADE)
 
 
-class Customer(User):
-    user_id = models.CharField(max_length=50, null=False, blank=False, unique=True,db_index=True)
-    created_on = models.BigIntegerField()
-    is_archived = models.BooleanField(default=False)
-    validated = models.BooleanField(default=False)
-
-
-class Authentication(models.Model):
-    token = models.CharField(max_length=50)
-    expiry_date = models.BigIntegerField(default=get_utc_ms_time(current_time()) + 31622400000)
-    user = models.ForeignKey(Customer, on_delete=models.CASCADE)
-
-
-class Validation(models.Model):
-    user = models.ForeignKey(Customer, on_delete=models.CASCADE)
-    expiry_date = models.BigIntegerField()
+# class Validation(models.Model):
+#     user = models.ForeignKey(Customer, on_delete=models.CASCADE)
+#     expiry_date = models.BigIntegerField()
 
 
 # class CustomerDetails(models.Model):
