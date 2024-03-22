@@ -2,6 +2,7 @@ from django.db import models
 
 from vekas.utils.utility_functions import default_expiry_date
 
+
 class Customer(models.Model):
     name = models.CharField(db_index=True, max_length=256, null=True, blank=True)
     language = models.CharField(max_length=20, default='en')
@@ -10,6 +11,7 @@ class Customer(models.Model):
     user_type = models.CharField(db_index=True, max_length=256, null=True, blank=True)
     created_on = models.BigIntegerField()
     is_archived = models.BooleanField(default=False)
+
 
 class Authentication(models.Model):
     token = models.CharField(max_length=256)
