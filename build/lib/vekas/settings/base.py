@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'vekas.walletservice',
+    'vekas.userservice',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
