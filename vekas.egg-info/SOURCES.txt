@@ -18,6 +18,8 @@ vekas/userservice/tests.py
 vekas/userservice/views.py
 vekas/userservice/migrations/0001_initial.py
 vekas/userservice/migrations/__init__.py
+vekas/utils/__init__.py
+vekas/utils/utility_functions.py
 vekas/walletservice/__init__.py
 vekas/walletservice/models.py
 vekas/walletservice/migrations/0001_initial.py
