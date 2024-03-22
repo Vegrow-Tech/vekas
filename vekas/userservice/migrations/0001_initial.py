@@ -32,7 +32,7 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('token', models.CharField(max_length=256)),
                 ('expiry_date', models.DateTimeField(default=vekas.utils.utility_functions.default_expiry_date)),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='wallet.customer')),
+                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='customer')),
             ],
         ),
     ]

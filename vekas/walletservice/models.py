@@ -6,11 +6,10 @@ from django.utils import timezone
 
 
 class Transaction(models.Model):
-    transaction_id = models.CharField(max_length=100, default=str(uuid4))
+    transaction_id = models.CharField(max_length=100, default=uuid4)
     created_on = models.DateTimeField(auto_now_add=True)
 
 
-# Create your models here.
 class Wallet(models.Model):
     user = models.ForeignKey(Customer, on_delete=models.CASCADE)
     created_on = models.DateTimeField(auto_now_add=True)
