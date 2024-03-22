@@ -10,8 +10,8 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('userservice', '0001_initial'),
-        ('walletservice', '0002_delete_wallet'),
+        ('wallet', '0001_initial'),
+        ('wallet', '0002_delete_wallet'),
     ]
 
     operations = [
@@ -30,7 +30,7 @@ class Migration(migrations.Migration):
                 ('created_on', models.DateTimeField(default=django.utils.timezone.now)),
                 ('updated_on', models.DateTimeField(default=django.utils.timezone.now)),
                 ('amount', models.FloatField(default=0)),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='userservice.customer')),
+                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='wallet.customer')),
             ],
         ),
         migrations.CreateModel(
@@ -43,7 +43,7 @@ class Migration(migrations.Migration):
                 ('amount', models.FloatField(default=0)),
                 ('expiration', models.IntegerField(default=None)),
                 ('transaction_id', models.CharField(max_length=100)),
-                ('wallet', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='walletservice.wallet')),
+                ('wallet', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='wallet.wallet')),
             ],
         ),
         migrations.CreateModel(
@@ -54,7 +54,7 @@ class Migration(migrations.Migration):
                 ('updated_on', models.DateTimeField(default=django.utils.timezone.now)),
                 ('transfer_type', models.IntegerField()),
                 ('transfer_to_id', models.IntegerField()),
-                ('wallet_transaction', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='walletservice.wallettransactions')),
+                ('wallet_transaction', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='wallet.wallettransactions')),
             ],
         ),
     ]

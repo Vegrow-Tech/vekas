@@ -23,4 +23,6 @@ vekas/utils/utility_functions.py
 vekas/walletservice/__init__.py
 vekas/walletservice/models.py
 vekas/walletservice/migrations/0001_initial.py
+vekas/walletservice/migrations/0002_delete_wallet.py
+vekas/walletservice/migrations/0003_initial.py
 vekas/walletservice/migrations/__init__.py

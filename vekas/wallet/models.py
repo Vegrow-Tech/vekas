@@ -7,31 +7,32 @@ from django.utils import timezone
 
 class Transaction(models.Model):
     transaction_id = models.CharField(max_length=100, default=str(uuid4))
-    created_on = models.DateTimeField(default=timezone.now)
+    created_on = models.DateTimeField(auto_now_add=True)
 
 
 # Create your models here.
 class Wallet(models.Model):
     user = models.ForeignKey(Customer, on_delete=models.CASCADE)
-    created_on = models.DateTimeField(default=timezone.now)
-    updated_on = models.DateTimeField(default=timezone.now)
+    created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)
     amount = models.FloatField(default=0)
 
 
 class WalletTransactions(models.Model):
     wallet = models.ForeignKey(Wallet, on_delete=models.CASCADE)
-    created_on = models.DateTimeField(default=timezone.now)
-    updated_on = models.DateTimeField(default=timezone.now)
+    created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)
     transaction_type = models.CharField(max_length=10, null=False, blank=False)
     amount = models.FloatField(default=0)
     expiration = models.IntegerField(default=None)
     transaction_id = models.CharField(max_length=100)
+    transaction_message = models.CharField(max_length=512)
 
 
 class WalletTransactionsMetaData(models.Model):
     wallet_transaction = models.ForeignKey(WalletTransactions, on_delete=models.CASCADE)
-    created_on = models.DateTimeField(default=timezone.now)
-    updated_on = models.DateTimeField(default=timezone.now)
+    created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)
     transfer_type = models.IntegerField()
     transfer_to_id = models.IntegerField()
 
