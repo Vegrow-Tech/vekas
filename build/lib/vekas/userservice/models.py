@@ -9,14 +9,13 @@ class Customer(models.Model):
     created_on = models.BigIntegerField()
     is_archived = models.BooleanField(default=False)
     referral_code = models.CharField(db_index=True, max_length=256, unique=True)
-
     is_kyc_verified = models.BooleanField(default=False)
     kyc_verification_type = models.CharField(max_length=50, null=True, blank=True)  
 
 class Authentication(models.Model):
     token = models.CharField(max_length=256)
     user = models.ForeignKey(Customer, on_delete=models.CASCADE)
-    expiry_date = models.DateTimeField()
+    expiry_date = models.DateTimeField(null=True)
 
 class Referral(models.Model):
     referred_to = models.ForeignKey(Customer, on_delete=models.CASCADE, related_name="referred_to")
@@ -46,7 +45,7 @@ class ManualVerification(models.Model):
     business_name = models.CharField(max_length=256)
     address = models.CharField(max_length=1024)
     city = models.CharField(max_length=64)
-    state =  models.CharField(max_length=64),
+    state =  models.CharField(max_length=64, null=True, blank=True)
     pin_code =  models.CharField(max_length=25, null=True, blank=True)
     business_ph_number =  models.CharField(max_length=20, null=True, blank=True)
     gst_in = models.CharField(max_length=256)

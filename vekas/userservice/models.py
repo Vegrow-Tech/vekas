@@ -45,7 +45,7 @@ class ManualVerification(models.Model):
     business_name = models.CharField(max_length=256)
     address = models.CharField(max_length=1024)
     city = models.CharField(max_length=64)
-    state =  models.CharField(max_length=64),
+    state =  models.CharField(max_length=64, null=True, blank=True)
     pin_code =  models.CharField(max_length=25, null=True, blank=True)
     business_ph_number =  models.CharField(max_length=20, null=True, blank=True)
     gst_in = models.CharField(max_length=256)
