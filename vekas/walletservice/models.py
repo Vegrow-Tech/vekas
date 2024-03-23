@@ -35,6 +35,21 @@ class WalletTransactionsMetaData(models.Model):
     payment_type = models.CharField(max_length=256, default=None)
     transfer_to_id = models.IntegerField(null=True)
 
+
+class MandiPrice(models.Model):
+    user = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    created_on = models.DateTimeField(auto_now_add=True)
+    location = models.CharField(max_length=256)
+    images = models.TextField()
+
+
+class MandiPriceItem(models.Model):
+    mandi_price = models.ForeignKey(MandiPrice, on_delete=models.CASCADE)
+    created_on = models.DateTimeField(auto_now_add=True)
+    amount = models.FloatField(default=0)
+    product_id = models.BigIntegerField(null=True)
+    sku_id = models.BigIntegerField(null=True)
+
 # Create your models here.
 
 #

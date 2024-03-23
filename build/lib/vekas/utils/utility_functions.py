@@ -6,6 +6,16 @@ import pytz
 import os
 from flask import current_app as app
 
+
+import random
+import string
+
+
+def generate_random_string(length=10):
+    characters = string.ascii_letters + string.digits
+    return ''.join(random.choices(characters, k=length))
+
+
 def get_utc_ms_time(date):
     try:
         return int(mktime(date.timetuple()))*1000

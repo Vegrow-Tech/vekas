@@ -9,6 +9,7 @@ vekas.egg-info/dependency_links.txt
 vekas.egg-info/top_level.txt
 vekas/settings/__init__.py
 vekas/settings/base.py
+vekas/settings/integration.py
 vekas/settings/local.py
 vekas/userservice/__init__.py
 vekas/userservice/admin.py
@@ -18,6 +19,7 @@ vekas/userservice/tests.py
 vekas/userservice/views.py
 vekas/userservice/migrations/0001_initial.py
 vekas/userservice/migrations/0002_alter_authentication_user.py
+vekas/userservice/migrations/0003_customer_referral_code_referral_lead.py
 vekas/userservice/migrations/__init__.py
 vekas/utils/__init__.py
 vekas/utils/utility_functions.py
@@ -29,4 +31,5 @@ vekas/walletservice/migrations/0003_alter_transaction_transaction_id.py
 vekas/walletservice/migrations/0004_wallettransactions_is_expired.py
 vekas/walletservice/migrations/0005_wallettransactionsmetadata_payment_type.py
 vekas/walletservice/migrations/0006_alter_wallettransactionsmetadata_transfer_to_id_and_more.py
+vekas/walletservice/migrations/0007_mandiprice_mandipriceitem.py
 vekas/walletservice/migrations/__init__.py
