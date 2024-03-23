@@ -34,4 +34,5 @@ vekas/walletservice/migrations/0004_wallettransactions_is_expired.py
 vekas/walletservice/migrations/0005_wallettransactionsmetadata_payment_type.py
 vekas/walletservice/migrations/0006_alter_wallettransactionsmetadata_transfer_to_id_and_more.py
 vekas/walletservice/migrations/0007_mandiprice_mandipriceitem.py
+vekas/walletservice/migrations/0008_wallet_wallet_id.py
 vekas/walletservice/migrations/__init__.py

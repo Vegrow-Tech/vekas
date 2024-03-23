@@ -13,6 +13,7 @@ class Wallet(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     amount = models.FloatField(default=0)
+    wallet_id = models.CharField(max_length=50)
 
 
 class WalletTransactions(models.Model):
