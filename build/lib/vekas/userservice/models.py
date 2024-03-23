@@ -1,8 +1,5 @@
 from django.db import models
 
-from vekas.utils.utility_functions import default_expiry_date
-
-
 class Customer(models.Model):
     name = models.CharField(db_index=True, max_length=256, null=True, blank=True)
     language = models.CharField(max_length=20, default='en')
@@ -13,11 +10,13 @@ class Customer(models.Model):
     is_archived = models.BooleanField(default=False)
     referral_code = models.CharField(db_index=True, max_length=256, unique=True)
 
+    is_kyc_verified = models.BooleanField(default=False)
+    kyc_verification_type = models.CharField(max_length=50, null=True, blank=True)  
 
 class Authentication(models.Model):
     token = models.CharField(max_length=256)
     user = models.ForeignKey(Customer, on_delete=models.CASCADE)
-    expiry_date = models.DateTimeField(default=default_expiry_date)
+    expiry_date = models.DateTimeField()
 
 
 class Referral(models.Model):
@@ -30,3 +29,31 @@ class Lead(models.Model):
     phone_number = models.CharField(max_length=100, unique=True)
     referred_by = models.ForeignKey(Customer, on_delete=models.CASCADE)
     created_on = models.DateTimeField(auto_now_add=True)
+
+class AadharVerification(models.Model):
+    user = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    aadhar_number = models.CharField(max_length=20)
+    aadhar_details = models.TextField()
+    created_on = models.BigIntegerField()
+
+class PanVerification(models.Model):
+    user = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    pan_number = models.CharField(max_length=20)
+    pan_details = models.TextField()
+    created_on = models.BigIntegerField()    
+
+class ManualVerification(models.Model):
+    user = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    business_name = models.CharField(max_length=256)
+    address = models.CharField(max_length=1024)
+    city = models.CharField(max_length=64)
+    state =  models.CharField(max_length=64),
+    pin_code =  models.CharField(max_length=25),
+    business_ph_number =  models.CharField(max_length=20),
+    email = models.CharField(max_length=256)
+    gstIn = models.CharField(max_length=256)
+    pan_number = models.CharField(max_length=256)
+    user_name = models.CharField(max_length=256)
+    signature =  models.CharField(max_length=256)
+    created_on = models.BigIntegerField()
+
