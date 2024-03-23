@@ -9,14 +9,13 @@ class Customer(models.Model):
     created_on = models.BigIntegerField()
     is_archived = models.BooleanField(default=False)
     referral_code = models.CharField(db_index=True, max_length=256, unique=True)
-
     is_kyc_verified = models.BooleanField(default=False)
     kyc_verification_type = models.CharField(max_length=50, null=True, blank=True)  
 
 class Authentication(models.Model):
     token = models.CharField(max_length=256)
     user = models.ForeignKey(Customer, on_delete=models.CASCADE)
-    expiry_date = models.DateTimeField()
+    expiry_date = models.DateTimeField(null=True)
 
 class Referral(models.Model):
     referred_to = models.ForeignKey(Customer, on_delete=models.CASCADE, related_name="referred_to")
