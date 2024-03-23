@@ -2,6 +2,3 @@
 .DS_Store/
 *.pyc/
 __pycache__/
-
-vekas/settings/__pycache__
-vekas/walletservice/__pycache__
