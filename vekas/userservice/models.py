@@ -36,10 +36,7 @@ class ManualVerification(models.Model):
     state =  models.CharField(max_length=64),
     pin_code =  models.CharField(max_length=25),
     business_ph_number =  models.CharField(max_length=20),
-    email = models.CharField(max_length=256)
-    gstIn = models.CharField(max_length=256)
-    pan_number = models.CharField(max_length=256)
-    user_name = models.CharField(max_length=256)
+    gst_in = models.CharField(max_length=256)
     signature =  models.CharField(max_length=256)
     created_on = models.BigIntegerField()
 
