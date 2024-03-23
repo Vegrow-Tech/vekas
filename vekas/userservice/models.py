@@ -46,12 +46,9 @@ class ManualVerification(models.Model):
     address = models.CharField(max_length=1024)
     city = models.CharField(max_length=64)
     state =  models.CharField(max_length=64),
-    pin_code =  models.CharField(max_length=25),
-    business_ph_number =  models.CharField(max_length=20),
-    email = models.CharField(max_length=256)
-    gstIn = models.CharField(max_length=256)
-    pan_number = models.CharField(max_length=256)
-    user_name = models.CharField(max_length=256)
+    pin_code =  models.CharField(max_length=25, null=True, blank=True)
+    business_ph_number =  models.CharField(max_length=20, null=True, blank=True)
+    gst_in = models.CharField(max_length=256)
     signature =  models.CharField(max_length=256)
     created_on = models.BigIntegerField()
 

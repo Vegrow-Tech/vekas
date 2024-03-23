@@ -1,10 +1,6 @@
-Metadata-Version: 1.0
+Metadata-Version: 2.1
 Name: vekas
 Version: 1.0.0
 Summary: Database Layer access used across vekas
-Home-page: UNKNOWN
 Author: vekas
-Author-email: UNKNOWN
 License: PSF
-Description: UNKNOWN
-Platform: UNKNOWN
