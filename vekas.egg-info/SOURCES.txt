@@ -20,6 +20,7 @@ vekas/userservice/views.py
 vekas/userservice/migrations/0001_initial.py
 vekas/userservice/migrations/0002_alter_authentication_user.py
 vekas/userservice/migrations/0003_customer_referral_code_referral_lead.py
+vekas/userservice/migrations/0004_rename_email_manualverification_gst_in_and_more.py
 vekas/userservice/migrations/__init__.py
 vekas/utils/__init__.py
 vekas/utils/utility_functions.py
