@@ -10,7 +10,8 @@ class Customer(models.Model):
     is_archived = models.BooleanField(default=False)
     referral_code = models.CharField(db_index=True, max_length=256, unique=True)
     is_kyc_verified = models.BooleanField(default=False)
-    kyc_verification_type = models.CharField(max_length=50, null=True, blank=True)  
+    kyc_verification_type = models.CharField(max_length=50, null=True, blank=True)
+    profile_photo = models.TextField(null=True, blank=True) 
 
 class Authentication(models.Model):
     token = models.CharField(max_length=256)
@@ -21,7 +22,6 @@ class Referral(models.Model):
     referred_to = models.ForeignKey(Customer, on_delete=models.CASCADE, related_name="referred_to")
     referred_by = models.ForeignKey(Customer, on_delete=models.CASCADE, related_name="referred_by")
     created_on = models.DateTimeField(auto_now_add=True)
-
 
 class Lead(models.Model):
     phone_number = models.CharField(max_length=100, unique=True)
@@ -50,5 +50,5 @@ class ManualVerification(models.Model):
     business_ph_number =  models.CharField(max_length=20, null=True, blank=True)
     gst_in = models.CharField(max_length=256)
     signature =  models.CharField(max_length=256)
+    pan_number = models.CharField(max_length=20, null=True, blank=True)
     created_on = models.BigIntegerField()
-
