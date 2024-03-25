@@ -53,3 +53,8 @@ class ManualVerification(models.Model):
     signature =  models.CharField(max_length=256)
     pan_number = models.CharField(max_length=20, null=True, blank=True)
     created_on = models.BigIntegerField()
+
+class UserServiceConstants(models.Model):
+    key = models.CharField(max_length=100)
+    value = models.CharField(max_length=200)
+    description = models.CharField(max_length=200)

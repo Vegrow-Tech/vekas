@@ -24,6 +24,7 @@ vekas/userservice/migrations/0004_alter_authentication_expiry_date.py
 vekas/userservice/migrations/0005_rename_email_manualverification_gst_in_and_more.py
 vekas/userservice/migrations/0006_customer_profile_photo_manualverification_pan_number.py
 vekas/userservice/migrations/0007_customer_signature.py
+vekas/userservice/migrations/0008_userserviceconstants.py
 vekas/userservice/migrations/__init__.py
 vekas/utils/__init__.py
 vekas/utils/utility_functions.py
