@@ -11,7 +11,8 @@ class Customer(models.Model):
     referral_code = models.CharField(db_index=True, max_length=256, unique=True)
     is_kyc_verified = models.BooleanField(default=False)
     kyc_verification_type = models.CharField(max_length=50, null=True, blank=True)
-    profile_photo = models.TextField(null=True, blank=True) 
+    profile_photo = models.TextField(null=True, blank=True)
+    signature = models.TextField(null=True, blank=True)
 
 class Authentication(models.Model):
     token = models.CharField(max_length=256)
